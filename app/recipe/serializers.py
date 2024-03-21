@@ -62,9 +62,14 @@ class RecipeSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_date):
         # update a recipe
         tags = validated_date.pop('tags', None)
+        ingredients = validated_date.pop('ingredients', None)
         if tags is not None:
             instance.tags.clear()
             self._get_or_create_tags(tags, instance)
+
+        if ingredients is not None:
+            instance.ingredients.clear()
+            self._get_or_create_ingredients(ingredients, instance)
 
         for attr, value in validated_date.items():
             setattr(instance, attr, value)
