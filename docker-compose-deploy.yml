@@ -39,5 +39,5 @@ services:
       - static-data:/vol/static
 
 volumes:
-  static-data:
   postgres-data:
+  static-data:
