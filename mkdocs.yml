@@ -1,0 +1,10 @@
+site_name: recipe-app-api
+site_url: https://example.com
+nav:
+  - Home: index.md
+
+plugins:
+  - search
+  - mkdocstrings
+
+theme: mkdocs
